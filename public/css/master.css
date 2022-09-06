@@ -1,0 +1,36 @@
+.container-fluid{
+    margin: 0 auto;
+    padding: 0;
+    margin: 0;
+}
+
+.misH1{
+    text-align: center;
+    color: red;
+    font-size: 2rem;
+}
+
+/*Aquí dispuse nuestros mismos css que tenidamos en nuestra clase 3, lo realice sólo para que vean que podemos sin ningún problema, combinar como deseemos nuestros conocimientos de maquetación ahora con Bootstrap*/
+article img{
+    width: 100%;
+    opacity: 1;
+}
+
+article img:hover{
+    opacity: 0.8;
+}
+p{
+    text-align: justify;
+}
+
+
+.descuento{
+    right: 15px;
+    top: 20px;
+    position: absolute;
+    width: 20%;
+}
+
+.descripcion{
+    min-height: 10vh;
+}

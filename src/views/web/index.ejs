@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <%- include('../partials/head.ejs') %>   
+  <body>
+    <main class="container-fluid">
+    <%- include('../partials/navBar.ejs') %>  
+    <!--Carousel-->
+      <div id="carouselExampleIndicators" class="carousel slide d-none d-lg-block " data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/banner1.jpg" class="d-block w-100" alt="Relojes">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banner2.png" class="d-block w-100" alt="Relojes">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banner3.jpg" class="d-block w-100" alt="Relojes">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banner4.jpg" class="d-block w-100" alt="Relojes">
+          </div>        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+      <!--Listado de nuestros productos-->
+      <section class="row">
+        <article class="col-12">
+          <h2 class="display-4   text-center subtitulo" id="miH2Subtitulo">Las mejores marcas y diseños</h2>
+        </article>
+        <% for(let i= 0; i < relojes.length; i++){ %>
+            <article class="col-12 col-md-6 col-lg-3 card p-2">
+              <figure >
+                <img  src="images/relojes/<%= relojes[i].image%> " class="card-img-top w-100 d-block" alt="Reloj">
+              </figure>
+                <% if (relojes[i].discount == 30) { %>
+                  <img class="descuento" src="img/promo30.png" alt="Descuento 30%">  
+                <% }else if(relojes[i].discount == 15 ){ %>
+                  <img class="descuento" src="img/promo15.png" alt="Descuento 30%">
+                <% } %>
+              <div class="card-body">
+                <h5 class="card-title"><%= relojes[i].name%></h5>
+                <h5 class="card-title" >$  <%= relojes[i].price%> </h5>
+                <p class="card-text descripcion"><%= relojes[i].description%> </p>
+                <a href="#" class="btn btn-primary">Ver detalle</a>
+              </div>
+            </article>
+          <% } %>                   
+      </section>
+      <section class="row pt-3">
+        <article class="col-12 col-md-6 jumbotron jumbotron-fluid  pt-5 p-4">
+            <div>
+              <ul class="tabla">
+
+              </ul>
+            </div>
+            <h1 class="display-4">Los mejores diseños para ti</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </article>
+        <article class="col-12 col-md-6 jumbotron jumbotron-fluid">
+            <img  src="img/reloj12.jpg" class=" d-block w-100" alt="Los mejores diseño para ti">
+        </article>
+      </section>
+      <%- include('../partials/footer.ejs') %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+[
+  {
+    "nombre": "Daniel",
+    "apellido": "Fuentes",
+    "email": "cedavilu@gmail.com",
+    "password": "$2a$10$8Mz0oSQb/yrEu7BK87e8/ux/pOTy6tBP7004m0LyKfdDB11QPKZ16",
+    "avatar": "foto-1595560366110.png",
+    "role": 1
+  },
+  {
+    "nombre": "Eduardo",
+    "apellido": "Virgilio",
+    "email": "edu@gmail.com",
+    "password": "$2a$10$3vpXW0jEEqf3buP8gS9Bb.sCNrPw27WwJXRKE7PCj4g6fAZsMXnz2",
+    "avatar": "foto-1595629550864.jpg",
+    "role": 1
+  }
+]

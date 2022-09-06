@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %> 
+  <body>
+    <main class="container-fluid">
+      <%- include('../partials/navBar.ejs') %>   
+      <!--Producto-->
+      <section class="row">
+            <article class="col-12 col-md-6 mx-auto mt-5">
+                <figure >
+                  <img  src="/images/relojes/<%= miReloj.image%>" class="card-img-top w-100 d-block" alt="Reloj">
+                </figure> 
+                <% if (miReloj.discount == 30) { %>
+                  <img class="descuento" src="/img/promo30.png" alt="Descuento 30%">
+                <% } else if(miReloj.discount == 15){%>
+                  <img class="descuento" src="/img/promo15.png" alt="Descuento 15%">
+                <%}%>
+                <div class="card-body">
+                  <h5 class="card-title">Nombre: <%= miReloj.name%></h5>
+                  <h5 class="card-title">Precio: $ <%= miReloj.price %></h5>
+                  <h5 class="card-text">Descripción: <%= miReloj.description %></h5>
+                  <h5 class="card-text">Categría: <%= miReloj.category.name %></h5>
+                  
+                </div>
+                <a href="/administrar" class="btn btn-danger">Volver</a>
+            </article>
+      </section>
+    </main>
+  </body>
+</html>
+

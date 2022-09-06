@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <%- include('../partials/head.ejs') %>    
+<body>
+    <main class="container-fluid">
+      <%- include('../partials/navBar.ejs') %>
+      <!--Listado de nuestros productos-->
+      <section class="row">
+        <article class="col-12">
+          <h2 class="display-4 text-white bg-info text-center pt-5">Las mejores marcas y diseños</h2>
+        </article>
+        <% for(let i= 0; i < relojes.length; i++){ %>
+          <article class="col-12 col-md-6 col-lg-3 card p-2">
+            <figure >
+              <img  src="/images/relojes/<%= relojes[i].image%> " class="card-img-top w-100 d-block" alt="Reloj">
+            </figure>
+              <% if (relojes[i].discount == 30) { %>
+                <img class="descuento" src="img/promo30.png" alt="Descuento 30%">  
+              <% }else if(relojes[i].discount == 15 ){ %>
+                <img class="descuento" src="img/promo15.png" alt="Descuento 30%">
+              <% } %>
+            <div class="card-body">
+              <h5 class="card-title"><%= relojes[i].name%></h5>
+              <h5 class="card-title" >$  <%= relojes[i].price%> </h5>
+              <p class="card-text descripcion"><%= relojes[i].description%> </p>
+              <a href="#" class="btn btn-primary">Ver detalle</a>
+            </div>
+          </article>
+        <% } %>      
+      </section>
+      <%- include('../partials/footer.ejs') %>
+    </main>
+  </body>
+</html>

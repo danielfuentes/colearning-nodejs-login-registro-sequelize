@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <%- include('../partials/head.ejs') %>    
+<body>
+    <main class="container-fluid">
+      <%- include('../partials/navBar.ejs') %>
+      <!--Administrador de productos-->      <section class="row">
+        <article class="col-12">
+          <h2 class="display-4 text-white bg-info text-center pt-5">Administrador de Productos</h2>
+        </article>
+        <article class="col-6">
+          <a class="btn btn-primary" href="/administrar/create">Agregar <ion-icon name="add-circle-outline"></ion-icon></a>          
+        </article>
+        <article class="col-6">
+          <form action="/administrar/search_results" method="GET">
+            <input type="search" name="search">
+            <button class="btn btn-primary" type="submit"><ion-icon name="search-outline"></ion-icon></button>
+          </form>
+        </article>
+        <article class="col-12" >        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Ver</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Borrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% relojes.forEach(reloj => { %>
+              <tr>
+                <td><%= reloj.id%> </td>
+                <td><%= reloj.name%> </td>
+                <td><%= reloj.category.name%> </td>
+                <td><a href="/administrar/detail/<%= reloj.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
+                <td><a href="/administrar/edit/<%= reloj.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
+                <td><a href="/administrar/delete/<%= reloj.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table> 
+        </article>       
+      </main>
+      <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <div class="container-fluid">
+      <%- include('../partials/navBar') %>  
+
+        <!-- Cuerpo principal -->
+        <section class="row">
+          <article class="col-12  card pt-5" >
+                  <div class="card-body">
+                    <h1 class="card-title text-center">Actualizar un Producto</h1>
+                  </div>
+          </article>
+      </section>
+
+        <section class="bg-home pt-4">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-8 mx-auto bg-light ">
+                        <div class="create-form">
+                            <form action="/administrar/edit/<%= relojEditar.id%>?_method=PUT
+                            " method="POST" enctype="multipart/form-data" >
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre del reloj" required="required" value="<%= relojEditar.name%>">
+                                </div>	
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="descripcion" placeholder="Descripción del reloj" required="required" value="<%= relojEditar.description%>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="<%= relojEditar.price%>">
+                                </div>
+                                <div class="form-group">
+                                    <select  name="descuento" class="custom-select" id="validationCustom04" required>
+                                      <option disabled value="#">Seleccione un descuento"</option>
+                                      <option value="0" <%= relojEditar.discount == 0 ? "selected" : null %>
+                                        >Sin descuento</option>
+                                      <option value="15" <%= relojEditar.discount == 15 ? "selected" : null %>>15%</option>
+                                      <option value="30" <%= relojEditar.discount == 30 ? "selected" : null %>>30%</option>
+                                    </select>
+                                </div>
+                                <!--Aquí solicito la imagen-->
+                                <div class="custom-file">
+                                    <figure class="form-group">
+                                        <img  class="w-100" src="/images/relojes/<%= relojEditar.image%>" alt="Reloj <%= relojEditar.name%>">
+                                    </figure>
+                                    <input type="hidden"  name="oldImagen"  value="<%= relojEditar.image%>">
+                                    <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
+                                    <input type="file" name="imagen" >
+                                    <!--<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="imagen" required value=""> 
+
+                                    <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen...</label>-->
+                                 </div>
+                                 <div class="form-group">
+                                  <select name="categoria" id="categoria" class="custom-select">
+                                    <option value="<%=relojEditar.category.id %>" selected  hidden><%=relojEditar.category.name %></option>
+                                    <% categorias.forEach(categoria => { %>
+                                      <option value="<%=categoria.id %>"><%=categoria.name %></option>
+                                    <% }); %>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn btn-info">Actualizar</button>
+                                    <a href="/administrar" class="btn btn-danger">Volver</a>
+                                </div>
+                                
+                            </form>
+                    </div>                        
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+</html>

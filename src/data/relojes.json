@@ -1,0 +1,51 @@
+[
+  {
+    "nombre": "Card title",
+    "descripcion": "Hola como estan Ya casi salimos al receso Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": "800",
+    "descuento": "0",
+    "oldImagen": "reloj6.jpg",
+    "id": "6",
+    "imagen": "reloj6.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Card title",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 900,
+    "descuento": 15,
+    "imagen": "reloj7.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Card title",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 1200,
+    "descuento": 30,
+    "imagen": "reloj8.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Seiko",
+    "descripcion": "Tremendo reloj de pulsera de alta calidad",
+    "precio": "600",
+    "descuento": "15",
+    "imagen": "reloj8.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Mount Blank",
+    "descripcion": "Este es un tremendo reloj",
+    "precio": "250",
+    "descuento": "15",
+    "imagen": "reloj-1593213515979.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Tisot",
+    "descripcion": "Este es un tremendo reloj",
+    "precio": "1500",
+    "descuento": "0",
+    "imagen": "reloj-1593647106799.jpg"
+  }
+]
